@@ -6,8 +6,7 @@ import java.util.Map;
 LRU - Lease Recently Used Data. In this program we are creating a cache based on LRU algorithm.
 1. Initially capacity of the cache will be given. Cache can store the data of its capacity even then if we try to store the data it will delete the least recently used data and it will insert the latest data.
 2. When we create an object to the LRUCacheLeetCode with capacity, it will create Linkedhashmap with the given capacity.
-3. When we try to store the data even the map is full, set()method will internally calls the overided removeEldestEntry() and checks the size of the map with capacity, if the size of the map is greater than capacity then it will delete the least recently used data.
-*/
+3. When the cache is full and when we try to insert the data set()method will internally calls the overided removeEldestEntry() and checks the size of the map with capacity, if the size of the map is greater than capacity then it will delete the least recently used data
 
 public class LRUCacheLeetCode {
 
@@ -56,10 +55,6 @@ public class LRUCacheLeetCode {
     protected boolean removeEldestEntry(Map.Entry<Integer,Integer> map){
         return size()>capacity;
     }
-
-
-
-
 }
 
 
